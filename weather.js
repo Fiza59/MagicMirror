@@ -18,13 +18,12 @@ function displayWeather(weatherObj) {
     //POPULATE THE AREA BELOW THE DATE WITH THE PIC
     //AND SOME TEMP DATA (its in there)
 
-    var weatherIcon = document.createElement("img");
+    var weatherIcon = document.getElementById("weathericon");
     var weatherIconSize = "40px";
 
     weatherIcon.setAttribute("src", type + ".png");
     weatherIcon.setAttribute("height", weatherIconSize);
     weatherIcon.setAttribute("width", weatherIconSize);
-    document.getElementById("weatherdiv").appendChild(weatherIcon);
 
 } //end displayWeather
 
