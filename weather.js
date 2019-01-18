@@ -1,6 +1,12 @@
 var locator = "Manalapan";
 
-var url = "http://api.openweathermap.org/data/2.5/weather?q=" + locator + "&appid=240319ac01dfdcb21cb6c88f1fdc3095";
+var homeLocation = [40.286017, -74.311372];
+var lat = homeLocation[0];
+var lon = homeLocation[1];
+
+var url_1 = "http://api.openweathermap.org/data/2.5/weather?q=" + locator + "&appid=240319ac01dfdcb21cb6c88f1fdc3095";
+
+var url_2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=240319ac01dfdcb21cb6c88f1fdc3095";
 
 function displayWeather(weatherObj) {
 
@@ -49,7 +55,7 @@ function getWeatherData(){
         }
     }
 
-    request.open("GET", url);
+    request.open("GET", url_2); //use the lat&long version
     request.send();
 }
 
