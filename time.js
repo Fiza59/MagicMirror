@@ -10,4 +10,6 @@ function updateTime(){
     realtime.innerHTML = output;
 }
 
+updateTime(); // so it runs once immediately.
+
 setInterval(updateTime, 1000);

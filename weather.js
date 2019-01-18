@@ -1,30 +1,17 @@
-///////////////////// 
-// WEATHER 
-/////////////////////
+var locator = "Manalapan";
 
-// var endpoint = "http://api.openweathermap.org/data/2.5/weather"
-// var locator = "?q=manalapan,nj";
-// var api_key = "&appid=240319ac01dfdcb21cb6c88f1fdc3095";
-// var url = endpoint + locator + api_key;
-
-var url = "http://api.openweathermap.org/data/2.5/weather?q=manalapan&appid=240319ac01dfdcb21cb6c88f1fdc3095";
+var url = "http://api.openweathermap.org/data/2.5/weather?q=" + locator + "&appid=240319ac01dfdcb21cb6c88f1fdc3095";
 
 function displayWeather(weatherObj) {
-    // now we have the weather data.
 
     var type = weatherObj.weather[0].main;
-    console.log(weatherObj);
 
-    //console.log(type);
     //GET IMAGES OF CLOUDS, SUN, RAIN, WIND, SNOW, ETC
     //POPULATE THE AREA BELOW THE DATE WITH THE PIC
     //AND SOME TEMP DATA (its in there)
 
     var weatherIcon = document.createElement("img");
-    var weatherIconSize = "50px";
-
-    ////for testing////
-    //type = "Clouds";
+    var weatherIconSize = "40px";
 
     weatherIcon.setAttribute("src", type + ".png");
     weatherIcon.setAttribute("height", weatherIconSize);

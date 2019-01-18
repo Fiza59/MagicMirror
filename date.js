@@ -9,10 +9,12 @@ function getMonthName(n){
 }
 
 function monthdaySuffix(n){
-	if (n % 10 == 1) return "st";
-	if (n % 10 == 2) return "nd";
-	if (n % 10 == 3) return "rd";
-	return "th"; 
+	switch (n%10){
+		case 1: return "st";
+		case 2: return "nd";
+		case 3: return "rd";
+		default: return "th";
+	}
 }
 
 var d = new Date();
