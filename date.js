@@ -9,6 +9,7 @@ function getMonthName(n){
 }
 
 function monthdaySuffix(n){
+	if (n > 10 && n < 14) return "th";
 	switch (n%10){
 		case 1: return "st";
 		case 2: return "nd";
