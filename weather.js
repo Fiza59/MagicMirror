@@ -6,6 +6,8 @@ function displayWeather(weatherObj) {
 
     var type = weatherObj.weather[0].main;
 
+    console.log(type);
+
     //GET IMAGES OF CLOUDS, SUN, RAIN, WIND, SNOW, ETC
     //POPULATE THE AREA BELOW THE DATE WITH THE PIC
     //AND SOME TEMP DATA (its in there)
@@ -37,14 +39,20 @@ function displayTemperature(weatherObj) {
     document.getElementById("temperaturediv").appendChild(temperatureElement);
 }
 
-var request = new XMLHttpRequest();
-request.onreadystatechange = function () {
-    if (this.readyState == 4) {
-        var weatherObj = JSON.parse(this.response);
-        displayWeather(weatherObj);
-        displayTemperature(weatherObj);
+function getWeatherData(){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            var weatherObj = JSON.parse(this.response);
+            displayWeather(weatherObj);
+            displayTemperature(weatherObj);
+        }
     }
-};
 
-request.open("GET", url);
-request.send();
+    request.open("GET", url);
+    request.send();
+}
+
+getWeatherData();
+
+setInterval(getWeatherData, 1000000);
