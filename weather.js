@@ -21,7 +21,13 @@ function displayWeather(weatherObj) {
     var weatherIcon = document.getElementById("weathericon");
     var weatherIconSize = "40px";
 
-    weatherIcon.setAttribute("src", type + ".png");
+    try{
+        weatherIcon.setAttribute("src", type + ".png");
+    }
+    catch(e){
+        weatherIcon.setAttribute("src", "questionmark.jpg");
+    }
+    
     weatherIcon.setAttribute("height", weatherIconSize);
     weatherIcon.setAttribute("width", weatherIconSize);
 
