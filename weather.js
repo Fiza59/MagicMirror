@@ -25,7 +25,7 @@ function displayWeather(weatherObj) {
         weatherIcon.setAttribute("src", type + ".png");
     }
     catch(e){
-        weatherIcon.setAttribute("src", "questionmark.jpg");
+        weatherIcon.setAttribute("src", "questionmark.png");
     }
     
     weatherIcon.setAttribute("height", weatherIconSize);
