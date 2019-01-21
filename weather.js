@@ -18,7 +18,7 @@ function displayWeather(weatherObj) {
     //POPULATE THE AREA BELOW THE DATE WITH THE PIC
     //AND SOME TEMP DATA (its in there)
 
-    var weatherIcon = document.getElementById("weathericon");
+    var weatherIcon = document.getElementById("weatherimg");
     var weatherIconSize = "40px";
 
     try{
@@ -30,6 +30,7 @@ function displayWeather(weatherObj) {
     
     weatherIcon.setAttribute("height", weatherIconSize);
     weatherIcon.setAttribute("width", weatherIconSize);
+    ///document.getElementById("weatherdiv").appendChild(weatherIcon);
 
 } //end displayWeather
 
@@ -45,9 +46,8 @@ function displayTemperature(weatherObj) {
     temperature = Math.floor(KelvinToFahrenheit(temperature));
 
     //load it into an element
-    var temperatureElement = document.createElement("span");
+    var temperatureElement = document.getElementById("tempspan");
     temperatureElement.innerHTML += temperature + "\xB0F"; //thats the degree symbol in hex
-    document.getElementById("temperaturediv").appendChild(temperatureElement);
 }
 
 function getWeatherData(){

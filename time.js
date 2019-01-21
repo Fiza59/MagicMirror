@@ -6,7 +6,7 @@ function formatUnits(n){
 function updateTime(){
     var d  = new Date();
     output = d.getHours().toString() + ":" + formatUnits(d.getMinutes()) + ":" + formatUnits(d.getSeconds());
-    var realtime = document.getElementById("realtime");
+    var realtime = document.getElementById("timespan");
     realtime.innerHTML = output;
 }
 
