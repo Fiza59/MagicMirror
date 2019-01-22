@@ -11,27 +11,28 @@ var url_2 = "http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=
 function displayWeather(weatherObj) {
 
     var type = weatherObj.weather[0].main;
-
+    
     console.log(type);
+    
 
     //GET IMAGES OF CLOUDS, SUN, RAIN, WIND, SNOW, ETC
     //POPULATE THE AREA BELOW THE DATE WITH THE PIC
-    //AND SOME TEMP DATA (its in there)
-
-    var weatherIcon = document.getElementById("weatherimg");
+    
+    var weatherIcon = document.getElementById("weathericon");
     var weatherIconSize = "40px";
 
-    try{
-        weatherIcon.setAttribute("src", type + ".png");
-    }
-    catch(e){
+    validNames = ["Rain", "Clouds", "Mist", "Snow"];
+    
+    if (validNames.includes(type)){
+        weatherIcon.setAttribute("src", type+".png");
+    }   
+    else{
         weatherIcon.setAttribute("src", "questionmark.png");
-    }
+    } 
     
     weatherIcon.setAttribute("height", weatherIconSize);
     weatherIcon.setAttribute("width", weatherIconSize);
-    ///document.getElementById("weatherdiv").appendChild(weatherIcon);
-
+    
 } //end displayWeather
 
 function KelvinToFahrenheit(k) {
